@@ -1,0 +1,19 @@
+{
+  "timestamp": 1744215320169,
+  "transactions": [
+    {
+      "id": "acf863c9-8ea6-4daf-9eb2-61923efe9f85",
+      "timestamp": 1744215320169,
+      "sender": "COINBASE",
+      "recipient": "GENESIS_ADDRESS",
+      "amount": 100,
+      "fee": 0,
+      "type": "COINBASE",
+      "signature": null
+    }
+  ],
+  "previousHash": "0",
+  "height": 0,
+  "nonce": 0,
+  "hash": "4866e7078b463d5579d3d514e88d8ebcee66d89bf4a51a240a9470963a3234e5"
+}

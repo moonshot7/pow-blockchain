@@ -1,19 +1,28 @@
 {
   "name": "pow-blockchain",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A local proof-of-work blockchain implementation",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "client": "node client/client.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "body-parser": "^2.2.0",
     "crypto": "^1.0.1",
+    "crypto-js": "^4.2.0",
+    "elliptic": "^6.6.1",
     "express": "^5.1.0",
     "fs": "^0.0.1-security",
-    "path": "^0.12.7"
+    "fs-extra": "^11.3.0",
+    "path": "^0.12.7",
+    "uuid": "^11.1.0",
+    "uuidv4": "^6.2.13",
+    "websocket": "^1.0.35",
+    "ws": "^8.18.1"
   }
 }

@@ -1,0 +1,96 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Blockchain Explorer</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Local Blockchain Explorer</h1>
+        <div class="network-info">
+            <span id="connection-status">Connecting...</span>
+            <span id="block-count">Blocks: 0</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-tabs">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="blockchain">Blockchain</button>
+                <button class="tab-btn" data-tab="mempool">Mempool</button>
+                <button class="tab-btn" data-tab="wallets">Wallets</button>
+                <button class="tab-btn" data-tab="transactions">Create Transaction</button>
+            </div>
+
+            <div id="blockchain" class="tab-content active">
+                <h2>Blockchain</h2>
+                <div class="blocks-container" id="blocks-list"></div>
+            </div>
+
+            <div id="mempool" class="tab-content">
+                <h2>Mempool</h2>
+                <div class="mempool-container" id="mempool-list">
+                    <p>No pending transactions</p>
+                </div>
+            </div>
+
+            <div id="wallets" class="tab-content">
+                <h2>Wallet Balances</h2>
+                <div class="wallets-container" id="wallets-list"></div>
+                
+                <div class="wallet-generator">
+                    <h3>Generate New Wallet</h3>
+                    <button id="generate-wallet-btn">Generate</button>
+                    <div id="new-wallet-info" class="hidden">
+                        <div class="wallet-info">
+                            <p><strong>Public Key:</strong> <span id="wallet-public-key"></span></p>
+                            <p><strong>Private Key:</strong> <span id="wallet-private-key"></span></p>
+                            <p><strong>Address:</strong> <span id="wallet-address"></span></p>
+                        </div>
+                        <div class="warning">
+                            Save these keys! They will not be shown again.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="transactions" class="tab-content">
+                <h2>Create Transaction</h2>
+                <form id="transaction-form">
+                    <div class="form-group">
+                        <label for="sender-public-key">Sender Public Key</label>
+                        <input type="text" id="sender-public-key" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sender-private-key">Sender Private Key</label>
+                        <input type="text" id="sender-private-key" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-public-key">Recipient Public Key</label>
+                        <input type="text" id="recipient-public-key" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" min="0.000001" step="0.000001" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fee">Fee</label>
+                        <input type="number" id="fee" min="0.000001" step="0.000001" value="0.000001" required>
+                    </div>
+                    <button type="submit">Sign & Submit</button>
+                </form>
+                <div id="transaction-status"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Local Proof-of-Work Blockchain</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
